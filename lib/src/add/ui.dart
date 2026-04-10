@@ -38,11 +38,23 @@ class _TestHomeUiScreenState extends State<TestHomeUiScreen> {
           content: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              TextField(keyboardType: TextInputType.name,controller: nameC, decoration: const InputDecoration(hintText: "Name")),
+              TextField(
+                keyboardType: TextInputType.name,
+                controller: nameC,
+                decoration: const InputDecoration(hintText: "Name"),
+              ),
               const SizedBox(height: 10),
-              TextField(controller: emailC, decoration: const InputDecoration(hintText: "Email")),
+              TextField(
+                keyboardType: TextInputType.emailAddress,
+                controller: emailC,
+                decoration: const InputDecoration(hintText: "Email"),
+              ),
               const SizedBox(height: 10),
-              TextField(controller: phoneC, decoration: const InputDecoration(hintText: "Phone")),
+              TextField(
+                keyboardType: TextInputType.phone,
+                controller: phoneC,
+                decoration: const InputDecoration(hintText: "Phone"),
+              ),
             ],
           ),
           actions: [
@@ -58,7 +70,7 @@ class _TestHomeUiScreenState extends State<TestHomeUiScreen> {
                 loadData();
               },
               child: const Text("Save"),
-            )
+            ),
           ],
         );
       },
@@ -79,18 +91,10 @@ class _TestHomeUiScreenState extends State<TestHomeUiScreen> {
         label: const Text("Add User"),
       ),
 
-      body: ListViewWidgets(
-        userList: userList,
-        refresh: loadData,
-      ),
+      body: ListViewWidgets(userList: userList, refresh: loadData),
     );
   }
 }
-
-
-
-
-
 
 /*
 import 'package:authentication_app/src/add/storage_class.dart';
