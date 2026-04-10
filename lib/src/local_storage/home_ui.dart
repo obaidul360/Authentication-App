@@ -1,15 +1,14 @@
-/*
 import 'package:authentication_app/src/local_storage/share_preference.dart';
 import 'package:flutter/material.dart';
 
-class HomeUiScreen extends StatefulWidget {
-  const HomeUiScreen({super.key});
+class CustomHomeUiScreen extends StatefulWidget {
+  const CustomHomeUiScreen({super.key});
 
   @override
-  State<HomeUiScreen> createState() => _HomeUiScreenState();
+  State<CustomHomeUiScreen> createState() => _CustomHomeUiScreenState();
 }
 
-class _HomeUiScreenState extends State<HomeUiScreen> {
+class _CustomHomeUiScreenState extends State<CustomHomeUiScreen> {
   TextEditingController nameC = TextEditingController();
   TextEditingController emailC = TextEditingController();
   TextEditingController phoneC = TextEditingController();
@@ -87,4 +86,3 @@ class _HomeUiScreenState extends State<HomeUiScreen> {
     );
   }
 }
-*/
