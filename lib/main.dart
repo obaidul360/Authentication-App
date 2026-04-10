@@ -1,4 +1,4 @@
-
+import 'package:authentication_app/src/add/ui.dart';
 import 'package:authentication_app/src/local_storage/home_ui.dart';
 import 'package:flutter/material.dart';
 
@@ -19,9 +19,8 @@ class _MyAppState extends State<MyApp> {
     return SafeArea(
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: HomeUiScreen(),
+        home: HomeUiScreen(), //HomeUiScreen(),
       ),
     );
   }
 }
-
