@@ -49,7 +49,7 @@ class _TestHomeUiScreenState extends State<TestHomeUiScreen> {
                 controller: emailC,
                 decoration: const InputDecoration(hintText: "Email"),
               ),
-             /* const SizedBox(height: 10),
+              /* const SizedBox(height: 10),
               TextField(
                 keyboardType: TextInputType.phone,
                 controller: phoneC,
@@ -80,9 +80,11 @@ class _TestHomeUiScreenState extends State<TestHomeUiScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xE0FAF6F5),//0xffEFE986),
       appBar: AppBar(
         title: const Text("User List"),
-        backgroundColor: Colors.indigo,
+        centerTitle: true,
+          backgroundColor: Color(0xD9E99230)//0xffF6BE24),
       ),
 
       floatingActionButton: FloatingActionButton.extended(

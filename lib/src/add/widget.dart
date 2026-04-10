@@ -20,9 +20,10 @@ class ListViewWidgets extends StatelessWidget {
 
         String name = parts.length > 0 ? parts[0] : "";
         String email = parts.length > 1 ? parts[1] : "";
-        String phone = parts.length > 2 ? parts[2] : "";
+        // String phone = parts.length > 2 ? parts[2] : "";
 
         return Card(
+        color: Color(0xE0EDAD65),
           margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
           elevation: 3,
           shape: RoundedRectangleBorder(
@@ -30,8 +31,11 @@ class ListViewWidgets extends StatelessWidget {
           ),
           child: ListTile(
             leading: CircleAvatar(
-              backgroundColor: Colors.indigo,
-              child: Text(name.isNotEmpty ? name[0] : "?"),
+              backgroundColor: Colors.white54,
+              child: Text(
+                name.isNotEmpty ? name[0] : "?",
+                style: TextStyle(fontSize: 30, color: Colors.black),
+              ),
             ),
             title: Text(
               name,
@@ -40,7 +44,7 @@ class ListViewWidgets extends StatelessWidget {
             subtitle: Text(
               "$email",
               maxLines: 1,
-              style: TextStyle(overflow: TextOverflow.ellipsis),
+              //style: TextStyle(overflow: TextOverflow.ellipsis),
             ),
             isThreeLine: true,
 
@@ -79,7 +83,7 @@ class ListViewWidgets extends StatelessWidget {
 
     TextEditingController nameC = TextEditingController(text: parts[0]);
     TextEditingController emailC = TextEditingController(text: parts[1]);
-    TextEditingController phoneC = TextEditingController(text: parts[2]);
+    //TextEditingController phoneC = TextEditingController(text: parts[2]);
 
     showDialog(
       context: context,
@@ -97,10 +101,10 @@ class ListViewWidgets extends StatelessWidget {
                 controller: emailC,
                 decoration: const InputDecoration(hintText: "Email"),
               ),
-              TextField(
+              /*TextField(
                 controller: phoneC,
                 decoration: const InputDecoration(hintText: "Phone"),
-              ),
+              ),*/
             ],
           ),
           actions: [
@@ -110,7 +114,8 @@ class ListViewWidgets extends StatelessWidget {
             ),
             ElevatedButton(
               onPressed: () async {
-                userList[index] = "${nameC.text}|${emailC.text}|${phoneC.text}";
+                userList[index] =
+                    "${nameC.text}|${emailC.text}"; //|${phoneC.text}
 
                 await SharePre().saveAllData(userList);
                 refresh();
