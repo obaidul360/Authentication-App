@@ -35,11 +35,13 @@ class ListViewWidgets extends StatelessWidget {
             ),
             title: Text(
               name,
-              style: const TextStyle(
-                fontWeight: FontWeight.bold,
-              ),
+              style: const TextStyle(fontWeight: FontWeight.bold),
             ),
-            subtitle: Text("$email\n$phone"),
+            subtitle: Text(
+              "$email",
+              maxLines: 1,
+              style: TextStyle(overflow: TextOverflow.ellipsis),
+            ),
             isThreeLine: true,
 
             trailing: Row(
@@ -75,12 +77,9 @@ class ListViewWidgets extends StatelessWidget {
   void editUser(BuildContext context, int index) {
     var parts = userList[index].split("|");
 
-    TextEditingController nameC =
-    TextEditingController(text: parts[0]);
-    TextEditingController emailC =
-    TextEditingController(text: parts[1]);
-    TextEditingController phoneC =
-    TextEditingController(text: parts[2]);
+    TextEditingController nameC = TextEditingController(text: parts[0]);
+    TextEditingController emailC = TextEditingController(text: parts[1]);
+    TextEditingController phoneC = TextEditingController(text: parts[2]);
 
     showDialog(
       context: context,
@@ -90,9 +89,18 @@ class ListViewWidgets extends StatelessWidget {
           content: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              TextField(controller: nameC, decoration: const InputDecoration(hintText: "Name")),
-              TextField(controller: emailC, decoration: const InputDecoration(hintText: "Email")),
-              TextField(controller: phoneC, decoration: const InputDecoration(hintText: "Phone")),
+              TextField(
+                controller: nameC,
+                decoration: const InputDecoration(hintText: "Name"),
+              ),
+              TextField(
+                controller: emailC,
+                decoration: const InputDecoration(hintText: "Email"),
+              ),
+              TextField(
+                controller: phoneC,
+                decoration: const InputDecoration(hintText: "Phone"),
+              ),
             ],
           ),
           actions: [
@@ -102,24 +110,20 @@ class ListViewWidgets extends StatelessWidget {
             ),
             ElevatedButton(
               onPressed: () async {
-                userList[index] =
-                "${nameC.text}|${emailC.text}|${phoneC.text}";
+                userList[index] = "${nameC.text}|${emailC.text}|${phoneC.text}";
 
                 await SharePre().saveAllData(userList);
                 refresh();
                 Navigator.pop(context);
               },
               child: const Text("Update"),
-            )
+            ),
           ],
         );
       },
     );
   }
 }
-
-
-
 
 /*
 import 'package:flutter/material.dart';

@@ -6,13 +6,13 @@ class SharePre {
   Future<void> saveData({
     required String name,
     required String email,
-    required String phone,
+    //required String phone,
   }) async {
     final prefs = await SharedPreferences.getInstance();
 
     List<String> oldData = prefs.getStringList("users") ?? [];
 
-    String newUser = "$name|$email|$phone";
+    String newUser = "$name|$email" ;//|$phone";
 
     oldData.add(newUser);
 

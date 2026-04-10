@@ -28,7 +28,7 @@ class _TestHomeUiScreenState extends State<TestHomeUiScreen> {
   void openForm() {
     TextEditingController nameC = TextEditingController();
     TextEditingController emailC = TextEditingController();
-    TextEditingController phoneC = TextEditingController();
+    //TextEditingController phoneC = TextEditingController();
 
     showDialog(
       context: context,
@@ -49,12 +49,12 @@ class _TestHomeUiScreenState extends State<TestHomeUiScreen> {
                 controller: emailC,
                 decoration: const InputDecoration(hintText: "Email"),
               ),
-              const SizedBox(height: 10),
+             /* const SizedBox(height: 10),
               TextField(
                 keyboardType: TextInputType.phone,
                 controller: phoneC,
                 decoration: const InputDecoration(hintText: "Phone"),
-              ),
+              ),*/
             ],
           ),
           actions: [
@@ -63,7 +63,7 @@ class _TestHomeUiScreenState extends State<TestHomeUiScreen> {
                 await SharePre().saveData(
                   name: nameC.text,
                   email: emailC.text,
-                  phone: phoneC.text,
+                  //phone: phoneC.text,
                 );
 
                 Navigator.pop(context);
