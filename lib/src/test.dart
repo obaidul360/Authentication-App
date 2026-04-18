@@ -10,6 +10,13 @@ class TestForGit extends StatefulWidget {
 class _TestForGitState extends State<TestForGit> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(appBar: AppBar(title: Text("Git")));
+    return Scaffold(appBar: AppBar(title: Text("Git")),
+    body: Column(
+      children: [
+        Text("data"),
+        Text("test"),
+        Text("push"),
+      ],
+    ),);
   }
 }
