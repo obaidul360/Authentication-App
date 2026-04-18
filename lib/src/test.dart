@@ -16,6 +16,13 @@ class _TestForGitState extends State<TestForGit> {
         Text("data"),
         Text("test"),
         Text("push"),
+        Text("push"),
+        Text("push"),
+        Text("push"),
+        Text("push"),
+        Text("data"),
+        Text("test"),
+        Text("push"),
       ],
     ),);
   }
